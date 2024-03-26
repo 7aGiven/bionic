@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="aosp"
+           fetch=".."
+           review="https://android-review.googlesource.com/" />
+  <default revision="refs/tags/android-7.1.2_r36"
+           remote="aosp"
+           sync-j="4" />
+
+  <project path="build" name="platform/build" groups="pdk" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+  <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
+  <project path="build/kati" name="platform/build/kati" groups="pdk,tradefed" />
+  <project path="build/soong" name="platform/build/soong" groups="pdk,tradefed" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="bionic" name="platform/bionic" groups="pdk" />
+  <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
+  <project path="external/gtest" name="platform/external/gtest" groups="pdk" />
+  <project path="external/jemalloc" name="platform/external/jemalloc" groups="pdk" />
+  <project path="external/libcxx" name="platform/external/libcxx" groups="pdk" />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi" groups="pdk" />
+  <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="pdk" />
+  <project path="external/llvm" name="platform/external/llvm" groups="pdk" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" groups="pdk" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" groups="pdk,linux,arm" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" name="platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8" groups="pdk,linux,arm" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" groups="pdk,linux,arm" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.15-4.8" groups="pdk,linux" />
+  <project path="prebuilts/misc" name="platform/prebuilts/misc" groups="pdk" />
+  <project path="prebuilts/ninja/linux-x86" name="platform/prebuilts/ninja/linux-x86" groups="linux,pdk,tradefed" />
+  <project path="system/core" name="platform/system/core" groups="pdk" />
+
+</manifest>
