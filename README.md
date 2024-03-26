@@ -26,6 +26,7 @@ ln -s /bin/python2 /bin/python
 ```shell
 repo init -u https://github.com/7aGiven/bionic -b bionic-7.1.2_r36
 .repo/repo/repo sync
+rm -r external/misc/common
 ```
 ## Build libc
 ```shell
