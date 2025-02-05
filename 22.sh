@@ -7,5 +7,5 @@ cd $branch
 set -x
 for project in $projects
 do
-	git clone --depth 1 -c advice.detachedHead=false -b $branch https://android.googlesource.com/platform/$project $project
+	git clone -c advice.detachedHead=false --depth 1 -b $branch https://android.googlesource.com/platform/$project $project
 done
